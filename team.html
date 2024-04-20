@@ -125,50 +125,7 @@
     </div>
 </div>
 <!-- Team End -->
-   <!-- Footer Start -->
-<div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
-    <div class="container py-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Our Office</h5>
-                <p class="mb-2">babujidairy@gmail.com</p>
-                <p class="mb-2">13/1 Sonam Soneri CHS Ltd</p>
-                <p class="mb-2">New Golden, Neswt PH-XI</p>
-                <p class="mb-2">100 Feet Rd Bhaindar(E),</p>
-                <p class="mb-2">Bhaindar, Thane,</p>
-                <p class="mb-2">Maharashtra, India, 401105</p>
-                <div class="d-flex pt-3">
-                    <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href="https://www.facebook.com/share/4ErxSRwr13bXHkpE/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
-
-                    <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href="https://www.instagram.com/babujidairyfarm?utm_source=qr&igsh=MWVrbjMyOTdiZXl5OA=="><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Quick Links</h5>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Our Services</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
-                <a class="btn btn-link" href="">Support</a>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Business Hours</h5>
-                <p class="mb-1">Everyday</p>
-                <h6 class="text-light">06:00 am - 09:00 pm</h6>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h5 class="text-white mb-4">Newsletter</h5>
-                <p>Stay updated with our latest news and offers!</p>
-                <div class="position-relative w-100">
-                    <input id="emailInput" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" required>
-                    <button id="submitButton" type="button" class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                </div>
-            </div>            
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
-
+  
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -186,53 +143,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const emailInput = document.getElementById("emailInput");
-            const submitButton = document.getElementById("submitButton");
-        
-            // Initialize EmailJS with your public key
-            emailjs.init("3DuKYh5nZNgbz_FJx"); // Replace with your public key
-        
-            // Add event listener for the submit button
-            submitButton.addEventListener("click", function() {
-                const email = emailInput.value;
-        
-                // Validate email format
-                if (!isValidEmail(email)) {
-                    alert("Please enter a valid email address.");
-                    return;
-                }
-        
-                // Define the parameters for the email
-                const emailParams = {
-                    from_email: email,
-                    to_email: "saurabhsingh2001.sk@gmail.com", // Replace with your recipient email
-                    subject: "New contact request",
-                    message: `A new contact request from: ${email}`
-                };
-        
-                // Send the email using EmailJS
-                emailjs.send("service_j55n7il", "template_apj31hq", emailParams) // Replace "template_apj31hq" with your EmailJS template ID
-                    .then(function(response) {
-                        console.log("Email sent successfully!", response);
-                        alert("Thank you for contacting us! We will respond shortly.");
-                        emailInput.value = ""; // Clear the input field after successful submission
-                    })
-                    .catch(function(error) {
-                        console.error("Error sending email:", error);
-                        alert("Oops! Something went wrong. Please try again later.");
-                    });
-            });
-        
-            // Function to validate email format
-            function isValidEmail(email) {
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailPattern.test(email);
-            }
-        });
-        
-    </script>
+
 </body>
 
 </html>
