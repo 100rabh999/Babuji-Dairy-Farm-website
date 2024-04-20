@@ -401,8 +401,10 @@
             <div class="col-lg-3 col-md-6">
                 <h5 class="text-white mb-4">Our Office</h5>
                 <p class="mb-2">babujidairy@gmail.com</p>
-                <p class="mb-2">13/1 Sonam Soneri CHS Ltd , New Golden, Neswt PH-XI</p>
-                <p class="mb-2">100 Feet Rd Bhaindar(E),Bhaindar, Thane,</p>
+                <p class="mb-2">13/1 Sonam Soneri CHS Ltd</p>
+                <p class="mb-2">New Golden, Neswt PH-XI</p>
+                <p class="mb-2">100 Feet Rd Bhaindar(E),</p>
+                <p class="mb-2">Bhaindar, Thane,</p>
                 <p class="mb-2">Maharashtra, India, 401105</p>
                 <div class="d-flex pt-3">
                     <a class="btn btn-square btn-outline-secondary rounded-circle mx-1" href="https://www.facebook.com/share/4ErxSRwr13bXHkpE/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
@@ -421,7 +423,15 @@
                 <p class="mb-1">Everyday</p>
                 <h6 class="text-light">06:00 am - 09:00 pm</h6>
             </div>
-      
+            <div class="col-lg-3 col-md-6">
+                <h5 class="text-white mb-4">Newsletter</h5>
+                <p>Stay Connected and Update with us</p>
+                <div class="position-relative w-100">
+                    <input id="emailInput" class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="email" placeholder="Your email" required>
+                    <button id="signUpButton" type="button" class="btn btn-secondary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                </div>
+            </div>
+        
         </div>
     </div>
 </div>
@@ -444,7 +454,45 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+
+    <script>
+
+        emailjs.init('3DuKYh5nZNgbz_FJx');
+
+// Function to send an email using EmailJS
+function sendEmail(userEmail) {
+    var templateParams = {
+        user_email: userEmail
+    };
+
+    // Send the email using EmailJS
+    emailjs.send('service_j55n7il', 'template_apj31hq', templateParams)
+        .then(function(response) {
+            console.log('Email sent successfully!', response);
+            alert("Thank you for subscribing to our newsletter!");
+        })
+        .catch(function(error) {
+            console.error('Failed to send email:', error);
+            alert("Failed to subscribe. Please try again later.");
+        });
+}
+
+// Event listener for the SignUp button
+document.getElementById('signUpButton').addEventListener('click', function() {
+    // Get the user's email from the input field
+    var userEmail = document.getElementById('emailInput').value;
+    // Validate the email input
+    if (userEmail) {
+        // Send the email
+        sendEmail(userEmail);
+    } else {
+        alert("Please enter a valid email address.");
+    }
+});
+
+    </script>
+
 </body>
 
 </html>
